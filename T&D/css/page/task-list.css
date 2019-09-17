@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+.task-list-block {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.task-list__item + .task-list__item {
+  margin: 16px 0 0 0;
+}
+
+.task {
+  padding: 16px;
+}
+.task--bg-blue {
+  background-color: #7fbfff;
+}
+.task--bg-red {
+  background-color: #ff7f7f;
+}
+.task__lower {
+  display: flex;
+  margin: 16px 0 0 0;
+}
+
+.task-content {
+  color: #ffffff;
+}
+
+.task-status {
+  width: 70px;
+  height: 48px;
+}
+
+.primary-button {
+  cursor: pointer;
+  display: block;
+  width: 70px;
+  height: 48px;
+  margin: 0 0 0 8px;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+@media screen and (min-width: 640px) {
+  .task-form {
+    display: flex;
+  }
+  .task__upper {
+    width: calc(100% - 242px);
+  }
+  .task__lower {
+    align-self: center;
+    width: 226px;
+    margin: 0 0 0 16px;
+  }
+}

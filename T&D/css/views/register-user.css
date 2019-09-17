@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+.user-register-area {
+  padding: 16px;
+}
+
+.user-register-block {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 16px;
+  border: 1px solid #7fbfff;
+}
+.user-register-block__line + .user-register-block__line {
+  margin: 24px 0 0 0;
+}
+
+.user-name-input-field__heading {
+  width: 80px;
+  margin: 0 0 8px 0;
+}
+.user-name-input-field__body {
+  width: 100%;
+  border: 1px solid #7fbfff;
+}
+
+.password-input-field__heading {
+  width: 80px;
+  margin: 0 0 8px 0;
+}
+.password-input-field__body {
+  width: 100%;
+  border: 1px solid #7fbfff;
+}
+
+.email-input-field__heading {
+  width: 80px;
+  margin: 0 0 8px 0;
+}
+.email-input-field__body {
+  width: 100%;
+  border: 1px solid #7fbfff;
+}
+
+.register-button {
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  padding: 4px 16px;
+  color: #ffffff;
+  background-color: #7fbfff;
+}
+
+@media screen and (min-width: 640px) {
+  .user-name-input-field {
+    display: flex;
+    align-items: center;
+  }
+  .user-name-input-field__heading {
+    margin: 0 16px 0 0;
+  }
+  .user-name-input-field__body {
+    width: calc(100% - 96px);
+  }
+
+  .password-input-field {
+    display: flex;
+    align-items: center;
+  }
+  .password-input-field__heading {
+    margin: 0 16px 0 0;
+  }
+  .password-input-field__body {
+    width: calc(100% - 96px);
+  }
+
+  .email-input-field {
+    display: flex;
+    align-items: center;
+  }
+  .email-input-field__heading {
+    margin: 0 16px 0 0;
+  }
+  .email-input-field__body {
+    width: calc(100% - 96px);
+  }
+}

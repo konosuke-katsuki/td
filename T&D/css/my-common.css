@@ -1,0 +1,38 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Hiragino Kaku Gothic Pro", "Yu Gothic", "Meiryo", sans-serif;
+  font-size: 100%;
+}
+
+ul, li {
+  list-style: none;
+}
+
+p, li, a, dt, dd, th, td, pre {
+  line-break: strict;
+  word-break: break-all;
+}
+
+input, textarea, button, select, option {
+  margin: 0;
+  padding: 0;
+  font-family: "Hiragino Kaku Gothic Pro", "Yu Gothic", "Meiryo", sans-serif;
+  font-size: 100%;
+  border: none;
+}
+
+.clear-fix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.w-rapper {
+  min-width: 320px;
+}

@@ -1,0 +1,10 @@
+@charset "UTF-8";
+#post-body-content {
+  margin-bottom: 0px;
+}
+.content-entry-field__body {
+  width: 100%;
+}
+.answer-entry-field__body {
+  width: 100%;
+}

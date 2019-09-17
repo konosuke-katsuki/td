@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+.menu-list-block {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.menu-list__item + .menu-list__item {
+  margin: 16px 0 0 0;
+}
+
+.menu-item {
+  padding: 4px;
+  text-align: center;
+  background-color: #9dd4ff;
+}
+.menu-item__name {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+}

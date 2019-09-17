@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.site-title {
+  text-align: center;
+}
+
+.home-link {
+  font-size: 5rem;
+  color: #000000;
+  text-decoration: none;
+}

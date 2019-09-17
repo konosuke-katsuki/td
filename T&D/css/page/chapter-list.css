@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.chapter-list-block {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.chapter-list__item + .chapter-list__item {
+  margin: 16px 0 0 0;
+}
+
+.chapter {
+  display: flex;
+  align-items: center;
+}
+.chapter__icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #9dd4ff;
+}
+.chapter__name {
+  display: block;
+  width: calc(100% - 24px);
+  margin: 0 0 0 8px;
+  text-decoration: none;
+}
