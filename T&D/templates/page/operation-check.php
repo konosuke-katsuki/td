@@ -1,5 +1,9 @@
 <?php get_header(); ?>
 
-<pre><?php var_dump( $post -> post_author ); ?></pre>
+<?php
+$file_name = $_SERVER['DOCUMENT_ROOT'] . "/log/log.txt";
+echo $file_name;
+file_put_contents( $file_name, "test2" );
+?>
 
 <?php get_footer(); ?>

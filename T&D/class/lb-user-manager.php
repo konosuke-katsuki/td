@@ -23,18 +23,18 @@ class Lb_User_Manager {
 
   public function add_roles() {
     $capabilities = [
-      "delete_others_posts" => true,
-      "delete_posts" => true,
-      "delete_private_posts" => true,
+      "delete_others_posts"    => true,
+      "delete_posts"           => true,
+      "delete_private_posts"   => true,
       "delete_published_posts" => true,
-      "edit_others_posts" => true,
-      "edit_posts" => true,
-      "edit_private_posts" => true,
-      "edit_published_posts" => true,
-      "manage_categories" => true,
-      "publish_posts" => true,
-      "read_private_posts" => true,
-      "read" => true
+      "edit_others_posts"      => true,
+      "edit_posts"             => true,
+      "edit_private_posts"     => true,
+      "edit_published_posts"   => true,
+      "manage_categories"      => true,
+      "publish_posts"          => true,
+      "read_private_posts"     => true,
+      "read"                   => true
     ];
     add_role( "member", "メンバー", $capabilities );
   }

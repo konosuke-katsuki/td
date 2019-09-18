@@ -5,7 +5,11 @@ class Lb_Custom_Taxonomy_Question_Category {
   private $taxonomy = "question_category";
 
   public function __construct() {
-    add_action( "init", [ $this, "create_taxonomy" ], 100 );
+    add_action( "init",                         [ $this, "create_taxonomy" ], 100 );
+    add_action( "created_" . $this -> taxonomy, [ $this, "create_author" ] );
+    add_action( "edited_" . $this -> taxonomy,  [ $this, "update_author" ] );
+
+    add_filter( "get_terms", [ $this, "test" ], 100, 4 );
   }
 
   public function create_taxonomy() {
@@ -41,5 +45,57 @@ class Lb_Custom_Taxonomy_Question_Category {
     ];
 
     register_taxonomy( $this -> taxonomy, "question", $args );
+  }
+
+  /**
+   *
+   */
+  public function create_author( $term_id ) {
+    if ( ! check_ajax_referer( 'add-tag', '_wpnonce_add-tag', false ) ) {
+      return;
+    }
+
+    add_term_meta( $term_id, "_term_author", wp_get_current_user() -> ID, true );
+  }
+
+  /**
+   *
+   */
+  public function update_author( $term_id ) {
+    if ( ! check_ajax_referer( 'taxinlineeditnonce', '_inline_edit', false ) ) {
+      return;
+    }
+
+    add_term_meta( $term_id, "_term_author", wp_get_current_user() -> ID, true );
+  }
+
+  /**
+   *
+   */
+  public function test( $terms, $taxonomies, $query_vars, $term_query ) {
+    global $pagenow, $post_type, $taxnow;
+
+    if (
+      $pagenow   !== "edit-tags.php" ||
+      $post_type !== "question" ||
+      $taxnow    !== "question_category"
+    ) {
+      return $terms;
+    }
+
+    $args = [
+      "taxonomy" => [ "question_category" ],
+      "hide_empty" => false,
+      "meta_query" => [
+        [
+          "key"   => "_term_author",
+          "value" => strval( wp_get_current_user() -> ID ),
+        ],
+      ],
+    ];
+
+    $term_query = new WP_Term_Query( $args );
+
+    return $term_query -> get_terms();
   }
 }

@@ -6,7 +6,7 @@ class Lb_Theme {
     add_action( "pre_get_posts", [ $this, "restrict_browse" ] );
 
     add_filter( "query_vars",     [ $this, "add_query_vars" ] );
-    // add_filter( "replace_editor", [ $this, "restrict_edit" ], 100, 2 );
+    add_filter( "replace_editor", [ $this, "restrict_edit" ], 100, 2 );
   }
 
   /**
@@ -23,7 +23,7 @@ class Lb_Theme {
   }
 
   /**
-   * 投稿の作成者だけがその投稿を編集できるように制限する。
+   * 自身が作成した投稿だけを編集できるように制限する。
    *
    * @param boolean is_false エディターの置き換えを許可するかどうか
    * @param object  post     投稿オブジェクト
@@ -39,7 +39,7 @@ class Lb_Theme {
   }
 
   /**
-   * 投稿リストにログインユーザーが作成した投稿だけを表示する。
+   * 自身が作成した投稿だけを投稿リストに表示するように制限する。。
    *
    * @param query
    */

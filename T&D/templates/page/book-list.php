@@ -1,12 +1,20 @@
 <?php
 $args = [
-  "orderby"    => "id",
+  "taxonomy"   => "question_category",
+  "orderby"    => "slug",
   "hide_empty" => 0,
   "parent"     => 0,
   "childless"  => false,
+  "meta_query" => [
+    [
+      "key"   => "_term_author",
+      "value" => strval( wp_get_current_user() -> ID ),
+    ],
+  ],
 ];
 
-$terms = get_terms( "question_category", $args );
+$term_query = new WP_Term_Query( $args );
+$terms      = $term_query -> get_terms();
 ?>
 
 <div class="book-list-block">
